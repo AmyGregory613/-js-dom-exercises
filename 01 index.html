@@ -11,19 +11,19 @@
 <body>
     <p id='text'>JavaScript Exercises</p>
     <div>
-        <button id="jsstyle" onclick="myFunction()">Style</button>
+        <button id="jsstyle" onclick="changeStyle()">Style</button>
     </div>
     	<script type="text/javascript">
-    		function myFunction (){
+    		function changeStyle (){
     			console.log("Hello")
-    			var changeStyle = document.getElementById('text');
-				changeStyle.style.fontFamily = "Arial";
+    			var pText = document.getElementById('text');
+				pText.style.fontFamily = "Arial";
 		
 			
-				changeStyle.style.fontSize = "36px";
+				pText.style.fontSize = "36px";
 			
 			
-				changeStyle.style.color = "#FF0000";
+				pText.style.color = "#FF0000";
   
     		}
     	</script>

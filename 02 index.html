@@ -8,24 +8,23 @@
 </head>
 
 <body>
-    <form id="form1">
-        First name: <input id="fname" type="text" name="fname" value=""><br>
-        Last name: <input id="lname" type="text" name="lname" value=""><br>
-        <input type="submit" value="Submit" onclick="getInput()">
+    <form id="form1" onsubmit="getInput()">
+        First name: <input id="fname" type="text" name="fname"><br>
+        Last name: <input id="lname" type="text" name="lname"><br>
+        <button type="submit">Submit</button>
     </form>
     <div id="output" style="color: red"></div>
 
     <script type="text/javascript">
+    	window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+}
     	function getInput() {
-  			var variable = document.getElementById('fname').value;
-  			document.getElementById('output').innerHTML = 'The user input is: ' + variable;
+  			var firstName = document.getElementById('fname').value;
+  			var lastName = document.getElementById("lname").value;
+  			document.getElementById('output').innerHTML = 'The user input is: ' + firstName + " "+ lastName;
+  			return false;
 		}
-
-//     	function myFunction() {
-//   			var x = document.getElementByName("fname").value;
-//   			var y = document.getElementByName("lname").value;
-//   			document.getElementById("output").innerHTML = "First Name: " + x + "Last Name: " = y;
-// }
     </script>
 </body>
 
