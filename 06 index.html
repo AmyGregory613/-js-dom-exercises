@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Exercise 6 -->
+<!-- Write a JavaScript function that accepts the number of a row and a column (to identify a particular cell) and then adds a string to update the content of that cell. Add an input box for each of the three values to capture and a button. When the button is clicked run the function.
+ -->
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+    table,
+    td {
+        border: 2px solid hotpink;
+        padding: 10px;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+
+    form {
+        margin-top: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <table id="myTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+        </tr>
+    </table>
+    <form>
+        Content: <input type="text" id="content" />
+        Row: <input type="text" id="row" />
+        Column: <input type="text" id="column" />
+        <input type="button" style="color: hotpink;" onclick="changeContent()" value="Change content">
+    </form>
+    <script type="text/javascript">
+    function changeContent() {
+        var rowInput = document.getElementById("row").value;
+        var colInput = document.getElementById("column").value;
+        var content = document.getElementById("content").value;
+        var row = document.getElementsByTagName("tr")[rowInput-1];
+        row.children[colInput-1].innerHTML = content;
+    }
+    
+    </script>
+</body>
+
+</html>

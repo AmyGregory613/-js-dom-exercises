@@ -1,0 +1,28 @@
+<!-- Exercise 4 -->
+<!-- Write a JavaScript function to get the value of the href, hreflang, rel, target, and type attributes of the specified link.  -->
+<html>
+	<head>
+		<meta charset=utf-8 />
+	</head>
+
+	<body>
+		<p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
+		<button onclick="getAttributes()">Click here to get attributes value</button>
+		<script type="text/javascript">
+			"use strict";
+
+			function getAttributes(){
+				var x = document.getElementById("w3r");
+
+				// .value is an attribute itself so that wouldn't work but this works!
+				var x1 = x.type;
+				var x2 = x.hreflang;
+				var x3 = x.rel;
+				var x4 = x.target;
+				var x5 = x.href;
+
+				console.log(x1, x2, x3, x4, x5);
+			}
+		</script>
+	</body>
+</html>
