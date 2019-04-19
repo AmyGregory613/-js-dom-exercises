@@ -8,7 +8,7 @@
     <title>Change the content of a cell</title>
     <style type="text/css">
     body {
-        margin: 30px;
+        margin: 130px;
     }
     </style>
 </head>
@@ -17,12 +17,50 @@
     <table id="myTable" border="1">
     </table>
     <form>
-    	Number of rows:<input type="number" />
-    	Number of columns:<input type="number" />
+    	Number of rows:<input id="rows" type="number" />
+    	Number of columns:<input id="columns" type="number" />
         <input type="button" onclick="createTable()" value="Create the table">
     </form>
     <script type="text/javascript">
     	
+    	function createTable(){
+    		console.log('in function');
+    		var numberOfRows = document.getElementById("rows").value;
+    		var numberOfColumns = document.getElementById("columns").value;
+    		var table = document.getElementById('myTable');
+    		var counter = 1;
+    		var cellCounter = 1;
+    		for (let i = 0; i < numberOfRows; i++){
+    			var row = table.insertRow(-1);
+    			row.setAttribute('id',`${counter}`);
+    			var rows = [row];
+    			console.log(rows);
+    			counter ++;
+    			for(let j = 0; j < numberOfColumns; j++){
+    				if(cellCounter <= numberOfColumns){
+    					var cell = row.insertCell(-1);
+    					cell.setAttribute('id',`${cellCounter}`);
+    					cell.innerHTML = `R${row.id} C${cell.id}`;
+    					var cells = [cell];
+    					console.log(cell)
+    					cellCounter ++;
+
+    				} else {
+    					cellCounter = 1;
+    					var cell = row.insertCell(-1);
+    					cell.setAttribute('id',`${cellCounter}`);
+    					cell.innerHTML = `R${row.id} C${cell.id}`;
+    					var cells = [cell];
+    					console.log(cell)
+    					cellCounter ++;
+    				}
+    				
+    			}
+    		}
+    		
+    	}
+
+
     </script>
 </body>
 
