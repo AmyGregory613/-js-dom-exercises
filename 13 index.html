@@ -1,0 +1,25 @@
+<!-- Exercise 13 -->
+<!-- Write a JavaScript program to get the width and height of the window (any time the window is resized). -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body onload="getSize()" onresize="getSize()">
+    <div id="win_dimensions">
+        <!-- Place height and width size here! -->
+    </div>
+    <script type="text/javascript">
+    function getSize() {
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+
+        // put the result into a h1 tag
+        document.getElementById('win_dimensions').innerHTML = "<h1>Width: " + width + " Height: " + height + "</h1>";
+    }
+    </script>
+</body>
+
+</html>

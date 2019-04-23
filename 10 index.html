@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Exercise 10 -->
+<!-- Write a JavaScript program to calculate the volume of a sphere. -->
+<!-- V=4/3(πr3) -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Volume of a Sphere</title>
+    <style>
+        body{padding-top:30px;}
+		label,input{display:block;} 
+	</style>
+</head>
+
+<body>
+    <p>Input radius value and get the volume of a sphere.</p>
+    <form action="" method="post" id="MyForm">
+        <label for="radius">Radius</label>
+        <input type="text" name="radius" id="radius" required>
+
+        <input type="button" value="Calculate" onclick="calculate()" id="submit"> 
+    </form>
+    Volume: 
+    <div id="volume"></div>
+    <script type="text/javascript">
+    	'use strict';
+    	function calculate(){
+    		var volume;
+    		var radius = document.getElementById('radius').value;
+    		radius = Math.abs(radius);
+    		volume = (4/3) * Math.PI * Math.pow(radius, 3);
+    		volume = volume.toFixed(4);
+    		console.log(volume);
+    		document.getElementById('volume').innerHTML = volume;
+    		return false;
+    	}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!-- Exercise 12 -->
+<!-- Write a JavaScript program to highlight the bold words of a paragraph when performing a mouseover on a certain link. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <p>
+            <a href="#" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse over here bold words of the following paragraph will be highlighted</a>
+        </p>
+        <p>
+            <b>We</b> have just started <b>this</b> section for the users (<b>beginner</b> to intermediate) who <b>want</b> to work with <b>various</b> JavaScript <b>problems</b> and write scripts online to <b>test</b> their JavaScript <b>skill</b>.
+        </p>
+    </div>
+    <script type="text/javascript">
+    //create a list of all bold items 
+    var boldItems;
+    window.onload = getBold_items();
+
+    // Collect all <b> tags
+    function getBold_items() {
+        boldItems = document.getElementsByTagName('b');
+    }
+    // iterate all bold tags and change color  
+    function highlight() {
+        for (var i = 0; i < boldItems.length; i++) {
+            boldItems[i].style.color = "pink";
+        }
+    }
+
+    // On mouse out highlighted words become black
+    function return_normal() {
+        for (var i = 0; i < boldItems.length; i++) {
+            boldItems[i].style.color = "black";
+        }
+    }
+    </script>
+</body>
+
+</html>
